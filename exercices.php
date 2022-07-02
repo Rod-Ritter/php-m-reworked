@@ -50,7 +50,6 @@ include('./includes/fonctions.php');
 // }
 // echo $maxNombres;
 
-$users_json = file_get_contents("./data/users.json");
 // $users_json = file_get_contents('https://randomuser.me/api/?results=20');
 
 // Afficher pour les informations des 10 users du ficier json
@@ -61,10 +60,46 @@ $users_json = file_get_contents("./data/users.json");
 // adresse
 // telephone
 
-$users_array = json_decode($users_json,true);
-// debug($users_array);
+$json_peoples = '[{
+    "nom" : "Nooravi",
+    "prenom" : "Amir",
+    "age" : 41,
+    "couleurs" : ["rouge", "vert", "blanc"],
+    "image" : "https://ximg.es/64x64/000/fff"
+    
+    },{
+    "nom" : "Mousfi",
+    "prenom" : "Sara",
+    "age" : 29,
+    "couleurs" : ["bleu", "blanc", "rouge"],
+    "image" : "https://ximg.es/64x64/000/fff"
+        
+    }]';
 
-foreach($users_array['results'] as $user) {
+// // debug($json_peoples);
+
+
+$peoples_array_php = json_decode($json_peoples, true);
+debug($peoples_array_php);
+
+// echo $peoples_array_php[0]['image'];
+echo '<br>';
+echo "Le nom de Sara est " . $peoples_array_php[1]['nom'];
+?>
+
+<div> <img src="<?php echo $peoples_array_php[0]['image'];?>" alt=""></div><?php
+
+
+
+
+// $users_json = file_get_contents("./data/users.json");
+// $users_array = json_decode($users_json,true);
+
+
+
+// debug($users_array['results']);
+
+/*foreach($users_array['results'] as $user) {
     ?>
     <div class="card__user">
         <p><img src="<?=$user['picture']['large']?>" alt="<?=$user['name']['first']?> <?=$user['name']['last']?>"></p>
@@ -73,9 +108,9 @@ foreach($users_array['results'] as $user) {
         <p><?=$user['dob']['age']?> years old</p>
         <p><?=$user['location']['street']['name']?></p>
         <p><?=$user['phone']?></p>
-    </div> -->
+    </div> 
     <?php
- }
+ }*/
 
 
 /*
