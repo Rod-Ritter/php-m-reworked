@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice PHP Mehdi</title>
+    <link rel="stylesheet" href="./assets/css/exercicesStyle.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+
 <?php
 include('./includes/fonctions.php');
 /*
@@ -60,7 +75,7 @@ include('./includes/fonctions.php');
 // adresse
 // telephone
 
-$json_peoples = '[{
+/*$json_peoples = '[{
     "nom" : "Nooravi",
     "prenom" : "Amir",
     "age" : 41,
@@ -88,33 +103,42 @@ echo "Le nom de Sara est " . $peoples_array_php[1]['nom'];
 ?>
 
 <div> <img src="<?php echo $peoples_array_php[0]['image'];?>" alt=""></div><?php
+*/
 
 
 
-
-// $users_json = file_get_contents("./data/users.json");
-// $users_array = json_decode($users_json,true);
-
-
+$users_json = file_get_contents("./data/users.json");
+$users_array = json_decode($users_json, true);
 
 // debug($users_array['results']);
-
-/*foreach($users_array['results'] as $user) {
-    ?>
-    <div class="card__user">
-        <p><img src="<?=$user['picture']['large']?>" alt="<?=$user['name']['first']?> <?=$user['name']['last']?>"></p>
-        <p><?=$user['name']['first']?> <?=$user['name']['last']?></p>
-        <p><?=$user['email']?></p>
-        <p><?=$user['dob']['age']?> years old</p>
-        <p><?=$user['location']['street']['name']?></p>
-        <p><?=$user['phone']?></p>
-    </div> 
-    <?php
- }*/
+?>
 
 
-/*
-Travaller avec le fichier json persons.json dans le dossier Travaux
+
+
+<?php
+foreach ($users_array['results'] as $user) {
+?>
+    
+        
+        <div class="card__user">
+            <p><img src="<?= $user['picture']['large'] ?>" alt="<?= $user['name']['first'] ?> <?= $user['name']['last'] ?>"></p>
+            <p><?= $user['name']['first'] ?> <?= $user['name']['last'] ?></p>
+            <p><?= $user['email'] ?></p>
+            <p><?= $user['dob']['age'] ?> years old</p>
+            <p><?= $user['location']['street']['name'] ?></p>
+            <p><?= $user['phone'] ?></p>
+        </div>
+    
+<?php
+}
+
+
+ 
+
+
+
+/*Travaller avec le fichier json persons.json dans le dossier Travaux
     Afficher le(a) deuxieme ami(e) de Raymond Jimenez dans un titre html <h3>
     Afficher la couleur des yeux de Ball Shaffer en gras html strong sous la forme d'une phrase : La couleur des yeux de Ball Shaffer est :
     Afficher dans une balise html article dans l'ordre suivant :
@@ -130,5 +154,4 @@ Travaller avec le fichier json persons.json dans le dossier Travaux
         Ne pas afficher la derniere la deniere virgule de tous les tags
         Chaque personne sera séparé d'une ligne horizontale html <hr>
 
-Vous trouverez une capture du resultat attendu.
-*/
+Vous trouverez une capture du resultat attendu. */
