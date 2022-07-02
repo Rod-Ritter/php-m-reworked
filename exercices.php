@@ -112,7 +112,7 @@ $users_array = json_decode($users_json, true);
 
 // debug($users_array['results']);
 ?>
-
+<h2 id="titre">People's Databank</h2>
 
 
 
