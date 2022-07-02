@@ -107,14 +107,22 @@ echo "Le nom de Sara est " . $peoples_array_php[1]['nom'];
 
 
 
+
+
+// __________________récupération des données dans le fichier json____________________
+
 $users_json = file_get_contents("./data/users.json");
+
+// __________________conversion des données json en variable php_______________________
+
 $users_array = json_decode($users_json, true);
 
-// debug($users_array['results']);
+
+//ajout d'un titre
+//mise en place d'une boucle foreach pour aller chercher tous les profils dans $user_array
+//puis retourner les elements du tableau dont nous avons besoin dans la div "card__user"
 ?>
 <h2 id="titre">People's Databank</h2>
-
-
 
 <?php
 foreach ($users_array['results'] as $user) {
