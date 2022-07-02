@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,11 @@
     <title>Exercice PHP Mehdi</title>
     <link rel="stylesheet" href="./assets/css/exercicesStyle.css">
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 
 
@@ -124,27 +127,40 @@ $users_array = json_decode($users_json, true);
 ?>
 <h2 id="titre">People's Databank</h2>
 
-<?php
-foreach ($users_array['results'] as $user) {
-?>
-    
-        
+<div class="container">
+    <?php
+    foreach ($users_array['results'] as $user) {
+    ?>
+
         <div class="card__user">
-            <p><img src="<?= $user['picture']['large'] ?>" alt="<?= $user['name']['first'] ?> <?= $user['name']['last'] ?>"></p>
-            <p><?= $user['name']['first'] ?> <?= $user['name']['last'] ?></p>
-            <p><?= $user['email'] ?></p>
-            <p><?= $user['dob']['age'] ?> years old</p>
-            <p><?= $user['location']['street']['name'] ?></p>
-            <p><?= $user['phone'] ?></p>
+            <div class="profilePhotos">
+                <img src="<?= $user['picture']['large'] ?>" alt="<?= $user['name']['first'] ?> <?= $user['name']['last'] ?>">
+            </div>
+            <div class="text">
+                <p><?= $user['name']['first'] ?> <?= $user['name']['last'] ?></p>
+                <p><?= $user['email'] ?></p>
+                <p><?= $user['dob']['age'] ?> years old</p>
+                <p><?= $user['location']['street']['name'] ?></p>
+                <p><?= $user['phone'] ?></p>
+            </div>
         </div>
-    
+
+    <?php
+    }
+    ?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <?php
-}
-
-
- 
-
-
 
 /*Travaller avec le fichier json persons.json dans le dossier Travaux
     Afficher le(a) deuxieme ami(e) de Raymond Jimenez dans un titre html <h3>
