@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="./assets/css/exercicesStyle.css">
 </head>
 
-<body>
 
-</body>
 
-</html>
+
 
 
 <?php
@@ -125,6 +123,7 @@ $users_array = json_decode($users_json, true);
 //mise en place d'une boucle foreach pour aller chercher tous les profils dans $user_array
 //puis retourner les elements du tableau dont nous avons besoin dans la div "card__user"
 ?>
+<body>
 <h2 id="titre">People's Databank</h2>
 
 <div class="container">
@@ -137,7 +136,7 @@ $users_array = json_decode($users_json, true);
                 <img src="<?= $user['picture']['large'] ?>" alt="<?= $user['name']['first'] ?> <?= $user['name']['last'] ?>">
             </div>
             <div class="text">
-                <p><?= $user['name']['first'] ?> <?= $user['name']['last'] ?></p>
+                <h3><?= $user['name']['first'] ?> <?= $user['name']['last'] ?></h3>
                 <p><?= $user['email'] ?></p>
                 <p><?= $user['dob']['age'] ?> years old</p>
                 <p><?= $user['location']['street']['name'] ?></p>
@@ -149,6 +148,10 @@ $users_array = json_decode($users_json, true);
     }
     ?>
 </div>
+
+</body>
+
+</html>
 
 
 
