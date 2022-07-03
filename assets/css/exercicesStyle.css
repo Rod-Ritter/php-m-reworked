@@ -31,6 +31,11 @@ body{max-width: 900px;
     margin-top: 2rem;
     background-image: linear-gradient(rgba(255, 98, 0, 0.322),rgba(255, 213, 0, 0.364));
     box-shadow: 4px 13px 23px -1px rgba(153,97,28,0.73);
+    transition: all .2s ease-in-out
+}
+
+.card__user:hover{
+    transform: scale(1.065);
 }
 
 .profilePhotos img{
